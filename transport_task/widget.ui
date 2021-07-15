@@ -38,6 +38,7 @@
      <weight>75</weight>
      <bold>true</bold>
      <underline>true</underline>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="cursor">
@@ -114,6 +115,7 @@ background-repeat: no-repeat;
     <font>
      <family>Segoe UI</family>
      <pointsize>12</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="cursor">
@@ -150,6 +152,7 @@ background-repeat: no-repeat;
      <pointsize>12</pointsize>
      <weight>50</weight>
      <bold>false</bold>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="cursor">
@@ -186,6 +189,7 @@ background-repeat: no-repeat;
      <pointsize>12</pointsize>
      <weight>50</weight>
      <bold>false</bold>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="cursor">
@@ -231,6 +235,7 @@ background-repeat: no-repeat;
      <pointsize>12</pointsize>
      <weight>50</weight>
      <bold>false</bold>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="cursor">
@@ -267,6 +272,7 @@ background-repeat: no-repeat;
      <pointsize>12</pointsize>
      <weight>50</weight>
      <bold>false</bold>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="cursor">

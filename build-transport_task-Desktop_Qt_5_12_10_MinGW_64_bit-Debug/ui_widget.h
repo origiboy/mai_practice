@@ -50,6 +50,7 @@ public:
         font1.setBold(true);
         font1.setUnderline(true);
         font1.setWeight(75);
+        font1.setStrikeOut(false);
         label->setFont(font1);
         label->setCursor(QCursor(Qt::PointingHandCursor));
         label->setStyleSheet(QString::fromUtf8("text-decoration: underline;\n"
@@ -81,10 +82,7 @@ public:
         pushButtonClear = new QPushButton(Widget);
         pushButtonClear->setObjectName(QString::fromUtf8("pushButtonClear"));
         pushButtonClear->setGeometry(QRect(600, 150, 151, 40));
-        QFont font3;
-        font3.setFamily(QString::fromUtf8("Segoe UI"));
-        font3.setPointSize(12);
-        pushButtonClear->setFont(font3);
+        pushButtonClear->setFont(font2);
         pushButtonClear->setCursor(QCursor(Qt::PointingHandCursor));
         pushButtonClear->setStyleSheet(QString::fromUtf8("*{\n"
 "    border-radius: 20px;\n"
@@ -99,12 +97,13 @@ public:
         pushButton_2 = new QPushButton(Widget);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
         pushButton_2->setGeometry(QRect(600, 210, 221, 40));
-        QFont font4;
-        font4.setFamily(QString::fromUtf8("Segoe UI"));
-        font4.setPointSize(12);
-        font4.setBold(false);
-        font4.setWeight(50);
-        pushButton_2->setFont(font4);
+        QFont font3;
+        font3.setFamily(QString::fromUtf8("Segoe UI"));
+        font3.setPointSize(12);
+        font3.setBold(false);
+        font3.setWeight(50);
+        font3.setStrikeOut(false);
+        pushButton_2->setFont(font3);
         pushButton_2->setCursor(QCursor(Qt::PointingHandCursor));
         pushButton_2->setStyleSheet(QString::fromUtf8("*{\n"
 "    border-radius: 20px;\n"
@@ -119,7 +118,7 @@ public:
         pushButton_3 = new QPushButton(Widget);
         pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
         pushButton_3->setGeometry(QRect(600, 270, 221, 40));
-        pushButton_3->setFont(font4);
+        pushButton_3->setFont(font3);
         pushButton_3->setCursor(QCursor(Qt::PointingHandCursor));
         pushButton_3->setStyleSheet(QString::fromUtf8("*{\n"
 "    border-radius: 20px;\n"
@@ -136,7 +135,7 @@ public:
         pushButton_4 = new QPushButton(Widget);
         pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
         pushButton_4->setGeometry(QRect(840, 210, 131, 40));
-        pushButton_4->setFont(font4);
+        pushButton_4->setFont(font3);
         pushButton_4->setCursor(QCursor(Qt::PointingHandCursor));
         pushButton_4->setStyleSheet(QString::fromUtf8("*{\n"
 "    border-radius: 20px;\n"
@@ -151,7 +150,7 @@ public:
         pushButton_5 = new QPushButton(Widget);
         pushButton_5->setObjectName(QString::fromUtf8("pushButton_5"));
         pushButton_5->setGeometry(QRect(840, 270, 131, 40));
-        pushButton_5->setFont(font4);
+        pushButton_5->setFont(font3);
         pushButton_5->setCursor(QCursor(Qt::PointingHandCursor));
         pushButton_5->setStyleSheet(QString::fromUtf8("*{\n"
 "    border-radius: 20px;\n"

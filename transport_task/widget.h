@@ -6,6 +6,7 @@
 #include <QShortcut>
 #include <QTimer>
 #include <QMessageBox>
+#include <QGridLayout>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
@@ -18,7 +19,7 @@ class Widget : public QWidget
 public:
     Widget(QWidget *parent = nullptr);
     ~Widget();
-    QPushButton *button1, *button2;
+    QGridLayout *gridLayout;
 
 private:
     Ui::Widget *ui;
