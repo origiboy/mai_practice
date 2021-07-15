@@ -7,6 +7,7 @@
 #include <QTimer>
 #include <QMessageBox>
 #include <QGridLayout>
+#include <QSpinBox>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }

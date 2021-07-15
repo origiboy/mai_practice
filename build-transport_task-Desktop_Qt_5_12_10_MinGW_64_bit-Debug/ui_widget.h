@@ -11,7 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
@@ -23,13 +23,12 @@ class Ui_Widget
 public:
     QLabel *label;
     QLabel *label_2;
-    QWidget *gridLayoutWidget;
-    QGridLayout *gridLayout;
     QPushButton *pushButtonClear;
     QPushButton *pushButton_2;
     QPushButton *pushButton_3;
     QPushButton *pushButton_4;
     QPushButton *pushButton_5;
+    QGraphicsView *graphicsView;
 
     void setupUi(QWidget *Widget)
     {
@@ -73,12 +72,6 @@ public:
         label_2->setLineWidth(1);
         label_2->setWordWrap(false);
         label_2->setIndent(0);
-        gridLayoutWidget = new QWidget(Widget);
-        gridLayoutWidget->setObjectName(QString::fromUtf8("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(20, 150, 511, 441));
-        gridLayout = new QGridLayout(gridLayoutWidget);
-        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        gridLayout->setContentsMargins(0, 0, 0, 0);
         pushButtonClear = new QPushButton(Widget);
         pushButtonClear->setObjectName(QString::fromUtf8("pushButtonClear"));
         pushButtonClear->setGeometry(QRect(600, 150, 151, 40));
@@ -162,6 +155,14 @@ public:
 "  background: #dbefff;\n"
 "}\n"
 ""));
+        graphicsView = new QGraphicsView(Widget);
+        graphicsView->setObjectName(QString::fromUtf8("graphicsView"));
+        graphicsView->setGeometry(QRect(20, 130, 531, 441));
+        QFont font4;
+        font4.setFamily(QString::fromUtf8("Segoe UI"));
+        font4.setPointSize(10);
+        graphicsView->setFont(font4);
+        graphicsView->setStyleSheet(QString::fromUtf8("border: 1px solid black;"));
 
         retranslateUi(Widget);
 

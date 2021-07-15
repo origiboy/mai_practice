@@ -91,17 +91,6 @@ background-repeat: no-repeat;
     <number>0</number>
    </property>
   </widget>
-  <widget class="QWidget" name="gridLayoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>150</y>
-     <width>511</width>
-     <height>441</height>
-    </rect>
-   </property>
-   <layout class="QGridLayout" name="gridLayout"/>
-  </widget>
   <widget class="QPushButton" name="pushButtonClear">
    <property name="geometry">
     <rect>
@@ -292,6 +281,25 @@ background-repeat: no-repeat;
    </property>
    <property name="text">
     <string>Убрать -1</string>
+   </property>
+  </widget>
+  <widget class="QGraphicsView" name="graphicsView">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>130</y>
+     <width>531</width>
+     <height>441</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Segoe UI</family>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: 1px solid black;</string>
    </property>
   </widget>
  </widget>
