@@ -283,7 +283,7 @@ background-repeat: no-repeat;
     <string>Убрать -1</string>
    </property>
   </widget>
-  <widget class="QGraphicsView" name="graphicsView">
+  <widget class="QGraphicsView" name="inputTable">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -303,7 +303,7 @@ background-repeat: no-repeat;
     <string notr="true">border: 1px solid black;</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_6">
+  <widget class="QPushButton" name="pushButtonSolve">
    <property name="geometry">
     <rect>
      <x>330</x>

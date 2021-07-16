@@ -10,6 +10,8 @@
 #include <QSpinBox>
 #include <QString>
 
+#include <iostream>
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
 QT_END_NAMESPACE
@@ -21,7 +23,7 @@ class Widget : public QWidget
 public:
     Widget(QWidget *parent = nullptr);
     ~Widget();
-    QGridLayout *gridLayout;
+    QGridLayout *gridLayout, *answerGrid;
     QSpinBox *data[6][6];
 
     int row = 3;
