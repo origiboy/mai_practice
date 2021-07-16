@@ -139,11 +139,11 @@ void Widget::on_pushButtonSolve_clicked() {
     int i = 0; //строка
     int j = 0; //столбец
 
-    int taskData[row][column];
+    int taskData[row+1][column+1];
 
 
-    for (i = 0; i < row; i++) {
-        for (j = 0; j < column; j++) {
+    for (i = 0; i < row+1; i++) {
+        for (j = 0; j < column+1; j++) {
             taskData[i][j] = data[i][j]->value();
         }
     }
@@ -156,26 +156,16 @@ void Widget::on_pushButtonSolve_clicked() {
 
     QGridLayout *answerGrid = new QGridLayout(ui->answer);
 
-    int providers = row;
-      int consumers = column;
 
       answerGrid->setVerticalSpacing(1);
       answerGrid->setHorizontalSpacing(1);
-        QLabel *title = new QLabel("12", this);
+        QLabel *title = new QLabel("", this);
 
-      for (i = 0; i < 2; i++)
-      {
-          for (j = 0; j < 2; j++)
-          {
-                title = new QLabel("12", this);
-              answerGrid->addWidget(title, i, j, 1, 1, Qt::AlignCenter | Qt::AlignVCenter);
-          }
 
-      }
-      ui->answer->setLayout(answerGrid);
 
-    /*
-    int providers = row;
+
+
+      int providers = row;
       int consumers = column;
 
 
@@ -249,14 +239,16 @@ void Widget::on_pushButtonSolve_clicked() {
 
       northwest_corner(plan, stocks, orders, providers, consumers);
 
-        QLabel *title = new QLabel("", this);
+
 
       for (int i = 0; i < providers; i++)
       {
           for (int j = 0; j < consumers; j++)
           {
-              title = new QLabel(QString::number(plan[i][j]), this);
-              answerGrid->addWidget(title, i, j, 1, 1, Qt::AlignCenter | Qt::AlignVCenter);
+
+            title = new QLabel(QString::number(taskData[i][j]), this);
+            answerGrid->addWidget(title, i, j, 1, 1, Qt::AlignCenter | Qt::AlignVCenter);
+
           }
 
       }
@@ -268,7 +260,7 @@ void Widget::on_pushButtonSolve_clicked() {
       {
 
       }
-;
+
 
       for (int i = 0; i < consumers; i++)
       {
@@ -288,7 +280,9 @@ void Widget::on_pushButtonSolve_clicked() {
       delete [] orders;
       delete [] plan;
 
-      */
+
+
+      ui->answer->setLayout(answerGrid);
 }
 
 Widget::~Widget()
