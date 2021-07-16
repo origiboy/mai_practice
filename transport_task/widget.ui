@@ -126,7 +126,7 @@ background-repeat: no-repeat;
     <string>Очистить таблицу</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="pushButtonAddStocks">
    <property name="geometry">
     <rect>
      <x>600</x>
@@ -160,10 +160,10 @@ background-repeat: no-repeat;
 </string>
    </property>
    <property name="text">
-    <string>Добавить поставщика +1</string>
+    <string>Добавить запасы +1</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_3">
+  <widget class="QPushButton" name="pushButtonAddOrders">
    <property name="geometry">
     <rect>
      <x>600</x>
@@ -197,7 +197,7 @@ background-repeat: no-repeat;
 </string>
    </property>
    <property name="text">
-    <string>Добавить потребителя +1</string>
+    <string>Добавить заказы +1</string>
    </property>
    <property name="checkable">
     <bool>false</bool>
@@ -209,7 +209,7 @@ background-repeat: no-repeat;
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_4">
+  <widget class="QPushButton" name="pushButtonDeleteStocks">
    <property name="geometry">
     <rect>
      <x>840</x>
@@ -246,7 +246,7 @@ background-repeat: no-repeat;
     <string>Убрать -1</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_5">
+  <widget class="QPushButton" name="pushButtonDeleteOrders">
    <property name="geometry">
     <rect>
      <x>840</x>
@@ -347,6 +347,16 @@ background-repeat: no-repeat;
    </property>
    <property name="flat">
     <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QGraphicsView" name="answer">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>340</y>
+     <width>361</width>
+     <height>241</height>
+    </rect>
    </property>
   </widget>
  </widget>

@@ -24,11 +24,12 @@ public:
     QLabel *label;
     QLabel *label_2;
     QPushButton *pushButtonClear;
-    QPushButton *pushButton_2;
-    QPushButton *pushButton_3;
-    QPushButton *pushButton_4;
-    QPushButton *pushButton_5;
+    QPushButton *pushButtonAddStocks;
+    QPushButton *pushButtonAddOrders;
+    QPushButton *pushButtonDeleteStocks;
+    QPushButton *pushButtonDeleteOrders;
     QGraphicsView *graphicsView;
+    QPushButton *pushButton_6;
 
     void setupUi(QWidget *Widget)
     {
@@ -87,18 +88,18 @@ public:
 "  background: #dbefff;\n"
 "}\n"
 ""));
-        pushButton_2 = new QPushButton(Widget);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setGeometry(QRect(600, 210, 221, 40));
+        pushButtonAddStocks = new QPushButton(Widget);
+        pushButtonAddStocks->setObjectName(QString::fromUtf8("pushButtonAddStocks"));
+        pushButtonAddStocks->setGeometry(QRect(600, 210, 221, 40));
         QFont font3;
         font3.setFamily(QString::fromUtf8("Segoe UI"));
         font3.setPointSize(12);
         font3.setBold(false);
         font3.setWeight(50);
         font3.setStrikeOut(false);
-        pushButton_2->setFont(font3);
-        pushButton_2->setCursor(QCursor(Qt::PointingHandCursor));
-        pushButton_2->setStyleSheet(QString::fromUtf8("*{\n"
+        pushButtonAddStocks->setFont(font3);
+        pushButtonAddStocks->setCursor(QCursor(Qt::PointingHandCursor));
+        pushButtonAddStocks->setStyleSheet(QString::fromUtf8("*{\n"
 "    border-radius: 20px;\n"
 "	background: #A8D8FF;\n"
 "}\n"
@@ -108,12 +109,12 @@ public:
 "  background: #dbefff;\n"
 "}\n"
 ""));
-        pushButton_3 = new QPushButton(Widget);
-        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
-        pushButton_3->setGeometry(QRect(600, 270, 221, 40));
-        pushButton_3->setFont(font3);
-        pushButton_3->setCursor(QCursor(Qt::PointingHandCursor));
-        pushButton_3->setStyleSheet(QString::fromUtf8("*{\n"
+        pushButtonAddOrders = new QPushButton(Widget);
+        pushButtonAddOrders->setObjectName(QString::fromUtf8("pushButtonAddOrders"));
+        pushButtonAddOrders->setGeometry(QRect(600, 270, 221, 40));
+        pushButtonAddOrders->setFont(font3);
+        pushButtonAddOrders->setCursor(QCursor(Qt::PointingHandCursor));
+        pushButtonAddOrders->setStyleSheet(QString::fromUtf8("*{\n"
 "    border-radius: 20px;\n"
 "	background: #A8D8FF;\n"
 "}\n"
@@ -123,14 +124,14 @@ public:
 "  background: #dbefff;\n"
 "}\n"
 ""));
-        pushButton_3->setCheckable(false);
-        pushButton_3->setFlat(true);
-        pushButton_4 = new QPushButton(Widget);
-        pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
-        pushButton_4->setGeometry(QRect(840, 210, 131, 40));
-        pushButton_4->setFont(font3);
-        pushButton_4->setCursor(QCursor(Qt::PointingHandCursor));
-        pushButton_4->setStyleSheet(QString::fromUtf8("*{\n"
+        pushButtonAddOrders->setCheckable(false);
+        pushButtonAddOrders->setFlat(true);
+        pushButtonDeleteStocks = new QPushButton(Widget);
+        pushButtonDeleteStocks->setObjectName(QString::fromUtf8("pushButtonDeleteStocks"));
+        pushButtonDeleteStocks->setGeometry(QRect(840, 210, 131, 40));
+        pushButtonDeleteStocks->setFont(font3);
+        pushButtonDeleteStocks->setCursor(QCursor(Qt::PointingHandCursor));
+        pushButtonDeleteStocks->setStyleSheet(QString::fromUtf8("*{\n"
 "    border-radius: 20px;\n"
 "	background: #A8D8FF;\n"
 "}\n"
@@ -140,12 +141,12 @@ public:
 "  background: #dbefff;\n"
 "}\n"
 ""));
-        pushButton_5 = new QPushButton(Widget);
-        pushButton_5->setObjectName(QString::fromUtf8("pushButton_5"));
-        pushButton_5->setGeometry(QRect(840, 270, 131, 40));
-        pushButton_5->setFont(font3);
-        pushButton_5->setCursor(QCursor(Qt::PointingHandCursor));
-        pushButton_5->setStyleSheet(QString::fromUtf8("*{\n"
+        pushButtonDeleteOrders = new QPushButton(Widget);
+        pushButtonDeleteOrders->setObjectName(QString::fromUtf8("pushButtonDeleteOrders"));
+        pushButtonDeleteOrders->setGeometry(QRect(840, 270, 131, 40));
+        pushButtonDeleteOrders->setFont(font3);
+        pushButtonDeleteOrders->setCursor(QCursor(Qt::PointingHandCursor));
+        pushButtonDeleteOrders->setStyleSheet(QString::fromUtf8("*{\n"
 "    border-radius: 20px;\n"
 "	background: #A8D8FF;\n"
 "}\n"
@@ -157,16 +158,35 @@ public:
 ""));
         graphicsView = new QGraphicsView(Widget);
         graphicsView->setObjectName(QString::fromUtf8("graphicsView"));
-        graphicsView->setGeometry(QRect(20, 130, 531, 441));
+        graphicsView->setGeometry(QRect(20, 130, 531, 401));
         QFont font4;
         font4.setFamily(QString::fromUtf8("Segoe UI"));
         font4.setPointSize(10);
+        font4.setStrikeOut(false);
         graphicsView->setFont(font4);
         graphicsView->setStyleSheet(QString::fromUtf8("border: 1px solid black;"));
+        pushButton_6 = new QPushButton(Widget);
+        pushButton_6->setObjectName(QString::fromUtf8("pushButton_6"));
+        pushButton_6->setGeometry(QRect(330, 550, 221, 40));
+        pushButton_6->setFont(font3);
+        pushButton_6->setCursor(QCursor(Qt::PointingHandCursor));
+        pushButton_6->setStyleSheet(QString::fromUtf8("*{\n"
+"    border-radius: 20px;\n"
+"	background: #A8D8FF;\n"
+"}\n"
+"\n"
+"\n"
+"*:hover{\n"
+"  background: #dbefff;\n"
+"}\n"
+""));
+        pushButton_6->setCheckable(false);
+        pushButton_6->setFlat(true);
 
         retranslateUi(Widget);
 
-        pushButton_3->setDefault(true);
+        pushButtonAddOrders->setDefault(true);
+        pushButton_6->setDefault(true);
 
 
         QMetaObject::connectSlotsByName(Widget);
@@ -179,10 +199,11 @@ public:
         label_2->setText(QApplication::translate("Widget", "\320\224\320\273\321\217 \321\200\320\260\321\201\321\207\321\221\321\202\320\260 \320\277\320\265\321\200\320\262\320\276\320\275\320\260\321\207\320\260\320\273\321\214\320\275\320\276\320\263\320\276 \320\277\320\273\320\260\320\275\320\260 \321\202\321\200\320\260\320\275\321\201\320\277\320\276\321\200\321\202\320\275\321\213\321\205 \320\277\320\265\321\200\320\265\320\262\320\276\320\267\320\276\320\272 \n"
 "\320\262\320\262\320\265\320\264\320\270\321\202\320\265 \321\206\320\265\320\273\321\213\320\265 \320\275\320\265\320\276\321\202\321\200\320\270\321\206\320\260\321\202\320\265\320\273\321\214\320\275\321\213\320\265 \321\207\320\270\321\201\320\273\320\260.", nullptr));
         pushButtonClear->setText(QApplication::translate("Widget", "\320\236\321\207\320\270\321\201\321\202\320\270\321\202\321\214 \321\202\320\260\320\261\320\273\320\270\321\206\321\203", nullptr));
-        pushButton_2->setText(QApplication::translate("Widget", "\320\224\320\276\320\261\320\260\320\262\320\270\321\202\321\214 \320\277\320\276\321\201\321\202\320\260\320\262\321\211\320\270\320\272\320\260 +1", nullptr));
-        pushButton_3->setText(QApplication::translate("Widget", "\320\224\320\276\320\261\320\260\320\262\320\270\321\202\321\214 \320\277\320\276\321\202\321\200\320\265\320\261\320\270\321\202\320\265\320\273\321\217 +1", nullptr));
-        pushButton_4->setText(QApplication::translate("Widget", "\320\243\320\261\321\200\320\260\321\202\321\214 -1", nullptr));
-        pushButton_5->setText(QApplication::translate("Widget", "\320\243\320\261\321\200\320\260\321\202\321\214 -1", nullptr));
+        pushButtonAddStocks->setText(QApplication::translate("Widget", "\320\224\320\276\320\261\320\260\320\262\320\270\321\202\321\214 \320\267\320\260\320\277\320\260\321\201\321\213 +1", nullptr));
+        pushButtonAddOrders->setText(QApplication::translate("Widget", "\320\224\320\276\320\261\320\260\320\262\320\270\321\202\321\214 \320\267\320\260\320\272\320\260\320\267\321\213 +1", nullptr));
+        pushButtonDeleteStocks->setText(QApplication::translate("Widget", "\320\243\320\261\321\200\320\260\321\202\321\214 -1", nullptr));
+        pushButtonDeleteOrders->setText(QApplication::translate("Widget", "\320\243\320\261\321\200\320\260\321\202\321\214 -1", nullptr));
+        pushButton_6->setText(QApplication::translate("Widget", "\320\240\320\265\321\210\320\270\321\202\321\214", nullptr));
     } // retranslateUi
 
 };

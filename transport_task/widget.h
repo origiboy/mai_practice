@@ -8,6 +8,7 @@
 #include <QMessageBox>
 #include <QGridLayout>
 #include <QSpinBox>
+#include <QString>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
@@ -21,8 +22,16 @@ public:
     Widget(QWidget *parent = nullptr);
     ~Widget();
     QGridLayout *gridLayout;
+    QSpinBox *data[6][6];
+
+    int row = 3;
+    int column = 3;
 
 private:
     Ui::Widget *ui;
+
+public slots:
+    void on_pushButtonSolve_clicked();
+
 };
 #endif // WIDGET_H
