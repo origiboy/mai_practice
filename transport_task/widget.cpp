@@ -276,7 +276,8 @@ void Widget::on_pushButtonSolve_clicked() {
 
       }
 
-      // z(plan, prices, providers, consumers);
+       title = new QLabel("Значение целевой функции: " + QString::number(z(plan, prices, providers, consumers)), this);
+       answerGrid->addWidget(title, providers, 0, 1, consumers, Qt::AlignCenter | Qt::AlignVCenter);
 
 
       for (int i = 0; i < providers; i++)
