@@ -15,13 +15,14 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
+#include <clickable_label.h>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_Widget
 {
 public:
-    QLabel *label;
+    clickable_label *label;
     QLabel *label_2;
     QPushButton *pushButtonClear;
     QPushButton *pushButtonAddStocks;
@@ -42,7 +43,7 @@ public:
         Widget->setFont(font);
         Widget->setStyleSheet(QString::fromUtf8("background: rgb(255, 255, 255);\n"
 ""));
-        label = new QLabel(Widget);
+        label = new clickable_label(Widget);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(770, 10, 191, 16));
         QFont font1;

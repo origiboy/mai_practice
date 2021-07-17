@@ -1,5 +1,7 @@
 #include "widget.h"
 #include "ui_widget.h"
+#include "QAbstractSpinBox"
+#include "clickable_label.h"
 
 using namespace std;
 
@@ -71,7 +73,13 @@ Widget::Widget(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Widget)
 {
-      ui->setupUi(this);
+
+
+        window = new info_window();
+
+        ui->setupUi(this);
+        connect(ui->label, SIGNAL(Mouse_Pressed()), this, SLOT(Mouse_Pressed_info()));
+
         QGridLayout *gridLayout = new QGridLayout(ui->inputTable);
         gridLayout->setVerticalSpacing(1);
         gridLayout->setHorizontalSpacing(1);
@@ -81,6 +89,7 @@ Widget::Widget(QWidget *parent)
         int i = 0; //строка
         int j = 0; //столбец
 
+       window = new info_window();
 
       QLabel *title = new QLabel("", this);
 
@@ -283,6 +292,11 @@ void Widget::on_pushButtonSolve_clicked() {
 
 
       ui->answer->setLayout(answerGrid);
+}
+
+void Widget::Mouse_Pressed_info()
+{
+    window->show();
 }
 
 Widget::~Widget()

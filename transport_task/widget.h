@@ -8,7 +8,7 @@
 #include <QMessageBox>
 #include <QGridLayout>
 #include <QSpinBox>
-#include <QString>
+#include "info_window.h"
 
 #include <iostream>
 
@@ -31,9 +31,11 @@ public:
 
 private:
     Ui::Widget *ui;
+    info_window *window;
 
 public slots:
     void on_pushButtonSolve_clicked();
+    void Mouse_Pressed_info();
 
 };
 #endif // WIDGET_H

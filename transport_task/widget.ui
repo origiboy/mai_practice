@@ -22,7 +22,7 @@
    <string notr="true">background: rgb(255, 255, 255);
 </string>
   </property>
-  <widget class="QLabel" name="label">
+  <widget class="clickable_label" name="label">
    <property name="geometry">
     <rect>
      <x>770</x>
@@ -360,6 +360,13 @@ background-repeat: no-repeat;
    </property>
   </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>clickable_label</class>
+   <extends>QLabel</extends>
+   <header location="global">clickable_label.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
