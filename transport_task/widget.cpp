@@ -141,6 +141,15 @@ ui->inputTable->setLayout(gridLayout);
 
 }
 
+void Widget::on_pushButtonClear_clicked() {
+    int i = 0; //строка
+    int j = 0; //столбец
+    for (i = 0; i < row+1; i++) {
+        for (j = 0; j < column+1; j++) {
+            data[i][j]->setValue(0);
+        }
+    }
+}
 
 void Widget::on_pushButtonSolve_clicked() {
 

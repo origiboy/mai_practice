@@ -35,6 +35,7 @@ private:
 
 public slots:
     void on_pushButtonSolve_clicked();
+    void on_pushButtonClear_clicked();
     void Mouse_Pressed_info();
 
 };
