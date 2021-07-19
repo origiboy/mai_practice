@@ -12,6 +12,10 @@
 
 #include <iostream>
 
+
+
+
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
 QT_END_NAMESPACE
@@ -23,7 +27,6 @@ class Widget : public QWidget
 public:
     Widget(QWidget *parent = nullptr);
     ~Widget();
-    QGridLayout *gridLayout, *answerGrid;
     QSpinBox *data[6][6];
 
     int row = 3;
@@ -33,10 +36,16 @@ private:
     Ui::Widget *ui;
     info_window *window;
 
+signals:
+    void table_change_signal();
+
 public slots:
     void on_pushButtonSolve_clicked();
     void on_pushButtonClear_clicked();
     void Mouse_Pressed_info();
+    void table_change();
+
+    void on_pushButtonAddStocks_clicked();
 
 };
 #endif // WIDGET_H

@@ -160,7 +160,7 @@ background-repeat: no-repeat;
 </string>
    </property>
    <property name="text">
-    <string>Добавить запасы +1</string>
+    <string>Добавить поставщика +1</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButtonAddOrders">
@@ -197,7 +197,7 @@ background-repeat: no-repeat;
 </string>
    </property>
    <property name="text">
-    <string>Добавить заказы +1</string>
+    <string>Добавить потребителя +1</string>
    </property>
    <property name="checkable">
     <bool>false</bool>
@@ -283,26 +283,6 @@ background-repeat: no-repeat;
     <string>Убрать -1</string>
    </property>
   </widget>
-  <widget class="QGraphicsView" name="inputTable">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>130</y>
-     <width>531</width>
-     <height>401</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Segoe UI</family>
-     <pointsize>10</pointsize>
-     <strikeout>false</strikeout>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border: 1px solid black;</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="pushButtonSolve">
    <property name="geometry">
     <rect>
@@ -356,6 +336,16 @@ background-repeat: no-repeat;
      <y>340</y>
      <width>361</width>
      <height>241</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="inputTable">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>120</y>
+     <width>531</width>
+     <height>411</height>
     </rect>
    </property>
   </widget>

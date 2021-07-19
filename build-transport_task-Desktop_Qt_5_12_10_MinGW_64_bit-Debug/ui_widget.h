@@ -12,8 +12,10 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGraphicsView>
+#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QTableWidget>
 #include <QtWidgets/QWidget>
 #include <clickable_label.h>
 
@@ -29,9 +31,9 @@ public:
     QPushButton *pushButtonAddOrders;
     QPushButton *pushButtonDeleteStocks;
     QPushButton *pushButtonDeleteOrders;
-    QGraphicsView *inputTable;
     QPushButton *pushButtonSolve;
     QGraphicsView *answer;
+    QTableWidget *inputTable;
 
     void setupUi(QWidget *Widget)
     {
@@ -158,15 +160,6 @@ public:
 "  background: #dbefff;\n"
 "}\n"
 ""));
-        inputTable = new QGraphicsView(Widget);
-        inputTable->setObjectName(QString::fromUtf8("inputTable"));
-        inputTable->setGeometry(QRect(20, 130, 531, 401));
-        QFont font4;
-        font4.setFamily(QString::fromUtf8("Segoe UI"));
-        font4.setPointSize(10);
-        font4.setStrikeOut(false);
-        inputTable->setFont(font4);
-        inputTable->setStyleSheet(QString::fromUtf8("border: 1px solid black;"));
         pushButtonSolve = new QPushButton(Widget);
         pushButtonSolve->setObjectName(QString::fromUtf8("pushButtonSolve"));
         pushButtonSolve->setGeometry(QRect(330, 550, 221, 40));
@@ -187,6 +180,9 @@ public:
         answer = new QGraphicsView(Widget);
         answer->setObjectName(QString::fromUtf8("answer"));
         answer->setGeometry(QRect(610, 340, 361, 241));
+        inputTable = new QTableWidget(Widget);
+        inputTable->setObjectName(QString::fromUtf8("inputTable"));
+        inputTable->setGeometry(QRect(20, 120, 531, 411));
 
         retranslateUi(Widget);
 
@@ -204,8 +200,8 @@ public:
         label_2->setText(QApplication::translate("Widget", "\320\224\320\273\321\217 \321\200\320\260\321\201\321\207\321\221\321\202\320\260 \320\277\320\265\321\200\320\262\320\276\320\275\320\260\321\207\320\260\320\273\321\214\320\275\320\276\320\263\320\276 \320\277\320\273\320\260\320\275\320\260 \321\202\321\200\320\260\320\275\321\201\320\277\320\276\321\200\321\202\320\275\321\213\321\205 \320\277\320\265\321\200\320\265\320\262\320\276\320\267\320\276\320\272 \n"
 "\320\262\320\262\320\265\320\264\320\270\321\202\320\265 \321\206\320\265\320\273\321\213\320\265 \320\275\320\265\320\276\321\202\321\200\320\270\321\206\320\260\321\202\320\265\320\273\321\214\320\275\321\213\320\265 \321\207\320\270\321\201\320\273\320\260.", nullptr));
         pushButtonClear->setText(QApplication::translate("Widget", "\320\236\321\207\320\270\321\201\321\202\320\270\321\202\321\214 \321\202\320\260\320\261\320\273\320\270\321\206\321\203", nullptr));
-        pushButtonAddStocks->setText(QApplication::translate("Widget", "\320\224\320\276\320\261\320\260\320\262\320\270\321\202\321\214 \320\267\320\260\320\277\320\260\321\201\321\213 +1", nullptr));
-        pushButtonAddOrders->setText(QApplication::translate("Widget", "\320\224\320\276\320\261\320\260\320\262\320\270\321\202\321\214 \320\267\320\260\320\272\320\260\320\267\321\213 +1", nullptr));
+        pushButtonAddStocks->setText(QApplication::translate("Widget", "\320\224\320\276\320\261\320\260\320\262\320\270\321\202\321\214 \320\277\320\276\321\201\321\202\320\260\320\262\321\211\320\270\320\272\320\260 +1", nullptr));
+        pushButtonAddOrders->setText(QApplication::translate("Widget", "\320\224\320\276\320\261\320\260\320\262\320\270\321\202\321\214 \320\277\320\276\321\202\321\200\320\265\320\261\320\270\321\202\320\265\320\273\321\217 +1", nullptr));
         pushButtonDeleteStocks->setText(QApplication::translate("Widget", "\320\243\320\261\321\200\320\260\321\202\321\214 -1", nullptr));
         pushButtonDeleteOrders->setText(QApplication::translate("Widget", "\320\243\320\261\321\200\320\260\321\202\321\214 -1", nullptr));
         pushButtonSolve->setText(QApplication::translate("Widget", "\320\240\320\265\321\210\320\270\321\202\321\214", nullptr));
