@@ -80,6 +80,11 @@ Widget::Widget(QWidget *parent)
         ui->setupUi(this);
         connect(ui->label, SIGNAL(Mouse_Pressed()), this, SLOT(Mouse_Pressed_info()));
         connect(this, &Widget::table_change_signal, this, &Widget::table_change);
+
+        ui->pushButtonDeleteStocks->setDisabled(true);
+        ui->pushButtonDeleteOrders->setDisabled(true);
+
+
         emit table_change_signal();
 }
 
@@ -111,7 +116,6 @@ void Widget::table_change()
               if (i == 0 && j == 1 ) {
                   title = new QLabel("Потребитель", this);
                   ui->inputTable->setCellWidget(i, j, title);
-                  ui->inputTable->setSpan(0,1,1,column);
               }
               if (i == 0 && j == column + 1 ) {
                   title = new QLabel("Запас", this);
@@ -310,10 +314,44 @@ void Widget::on_pushButtonSolve_clicked() {
 }
 
 void Widget::on_pushButtonAddStocks_clicked() {
-    if (row < 6) {
+    if (row < ROWS_MAX) {
         row++;
-        if (row == 6) {
+        ui->pushButtonDeleteStocks->setDisabled(false);
+        if (row == ROWS_MAX) {
             ui->pushButtonAddStocks->setDisabled(true);
+        }
+        table_change_signal();
+    }
+}
+
+void Widget::on_pushButtonAddOrders_clicked() {
+    if (column < COLUMNS_MAX) {
+        column++;
+        ui->pushButtonDeleteOrders->setDisabled(false);
+        if (column == COLUMNS_MAX) {
+            ui->pushButtonAddOrders->setDisabled(true);
+        }
+        table_change_signal();
+    }
+}
+
+void Widget::on_pushButtonDeleteStocks_clicked() {
+    if (row > 3) {
+        row--;
+        ui->pushButtonAddStocks->setDisabled(false);
+        if (row == 3) {
+            ui->pushButtonDeleteStocks->setDisabled(true);
+        }
+        table_change_signal();
+    }
+}
+
+void Widget::on_pushButtonDeleteOrders_clicked() {
+    if (column > 3) {
+        ui->pushButtonAddOrders->setDisabled(false);
+        column--;
+        if (column == 3) {
+            ui->pushButtonDeleteOrders->setDisabled(true);
         }
         table_change_signal();
     }

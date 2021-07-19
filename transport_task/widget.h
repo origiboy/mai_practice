@@ -12,7 +12,7 @@
 
 #include <iostream>
 
-
+const int ROWS_MAX = 6, COLUMNS_MAX = 6;
 
 
 
@@ -27,7 +27,7 @@ class Widget : public QWidget
 public:
     Widget(QWidget *parent = nullptr);
     ~Widget();
-    QSpinBox *data[6][6];
+    QSpinBox *data[ROWS_MAX+1][COLUMNS_MAX+1];
 
     int row = 3;
     int column = 3;
@@ -46,6 +46,9 @@ public slots:
     void table_change();
 
     void on_pushButtonAddStocks_clicked();
+    void on_pushButtonAddOrders_clicked();
+    void on_pushButtonDeleteStocks_clicked();
+    void on_pushButtonDeleteOrders_clicked();
 
 };
 #endif // WIDGET_H
