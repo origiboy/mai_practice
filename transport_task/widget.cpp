@@ -180,21 +180,11 @@ void Widget::on_pushButtonSolve_clicked() {
 
     // Движок расчёта задачи
 
-
-    QGridLayout *answerGrid = new QGridLayout(ui->answer);
-
-
-      answerGrid->setVerticalSpacing(1);
-      answerGrid->setHorizontalSpacing(1);
-        QLabel *title = new QLabel("", this);
-
-
-
-
-
       int providers = row;
       int consumers = column;
 
+      ui->answerTable->verticalHeader()->hide();
+      ui->answerTable->horizontalHeader()->hide();
 
       int *stocks = new int [providers];
       int *orders = new int [consumers];
@@ -231,6 +221,9 @@ void Widget::on_pushButtonSolve_clicked() {
           closure(orders, consumers, a - b);
       }
 
+      ui->answerTable->setRowCount(providers);
+      ui->answerTable->setColumnCount(consumers);
+
       int **plan = new int* [providers];
       int **prices = new int* [providers];
 
@@ -262,40 +255,24 @@ void Widget::on_pushButtonSolve_clicked() {
           }
       }
 
-      //cout << endl;
-
       northwest_corner(plan, stocks, orders, providers, consumers);
 
+      ui->functionValue->setText(QString("Значение целевой функции = ") + QString::number(z(plan, prices, providers, consumers)));
 
 
       for (int i = 0; i < providers; i++)
       {
           for (int j = 0; j < consumers; j++)
           {
-
-            title = new QLabel(QString::number(taskData[i][j]), this);
-            answerGrid->addWidget(title, i, j, 1, 1, Qt::AlignCenter | Qt::AlignVCenter);
-
+              QTableWidgetItem *item = new QTableWidgetItem(tr("%1").arg(plan[i][j]));
+              item->setTextAlignment(Qt::AlignCenter);
+              ui->answerTable->setItem(i, j, item);
           }
-
       }
 
-      answerGrid->setSpacing(0);
-
-
-      for (int i = 0; i < providers; i++)
-      {
-
-      }
-
-
-      for (int i = 0; i < consumers; i++)
-      {
-
-      }
-
-       title = new QLabel("Значение целевой функции: " + QString::number(z(plan, prices, providers, consumers)), this);
-       answerGrid->addWidget(title, providers, 0, 1, consumers, Qt::AlignCenter | Qt::AlignVCenter);
+      ui->answerTable->horizontalHeader()->resizeSections(QHeaderView::Stretch);
+      ui->answerTable->verticalHeader()->resizeSections(QHeaderView::Stretch);
+      ui->answerTable->setEditTriggers(QAbstractItemView::NoEditTriggers); //Чтобы нельзя было редачить
 
 
       for (int i = 0; i < providers; i++)
@@ -303,14 +280,11 @@ void Widget::on_pushButtonSolve_clicked() {
           delete [] plan[i];
       }
 
+
     //  delete [] prices;
       delete [] stocks;
       delete [] orders;
       delete [] plan;
-
-
-
-      ui->answer->setLayout(answerGrid);
 }
 
 void Widget::on_pushButtonAddStocks_clicked() {

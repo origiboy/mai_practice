@@ -11,7 +11,6 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
@@ -32,8 +31,10 @@ public:
     QPushButton *pushButtonDeleteStocks;
     QPushButton *pushButtonDeleteOrders;
     QPushButton *pushButtonSolve;
-    QGraphicsView *answer;
     QTableWidget *inputTable;
+    QTableWidget *answerTable;
+    QLabel *functionValue;
+    QLabel *label_3;
 
     void setupUi(QWidget *Widget)
     {
@@ -79,7 +80,7 @@ public:
         label_2->setIndent(0);
         pushButtonClear = new QPushButton(Widget);
         pushButtonClear->setObjectName(QString::fromUtf8("pushButtonClear"));
-        pushButtonClear->setGeometry(QRect(600, 150, 151, 40));
+        pushButtonClear->setGeometry(QRect(600, 120, 151, 40));
         pushButtonClear->setFont(font2);
         pushButtonClear->setCursor(QCursor(Qt::PointingHandCursor));
         pushButtonClear->setStyleSheet(QString::fromUtf8("*{\n"
@@ -94,7 +95,7 @@ public:
 ""));
         pushButtonAddStocks = new QPushButton(Widget);
         pushButtonAddStocks->setObjectName(QString::fromUtf8("pushButtonAddStocks"));
-        pushButtonAddStocks->setGeometry(QRect(600, 210, 221, 40));
+        pushButtonAddStocks->setGeometry(QRect(600, 180, 221, 40));
         QFont font3;
         font3.setFamily(QString::fromUtf8("Segoe UI"));
         font3.setPointSize(12);
@@ -115,7 +116,7 @@ public:
 ""));
         pushButtonAddOrders = new QPushButton(Widget);
         pushButtonAddOrders->setObjectName(QString::fromUtf8("pushButtonAddOrders"));
-        pushButtonAddOrders->setGeometry(QRect(600, 270, 221, 40));
+        pushButtonAddOrders->setGeometry(QRect(600, 240, 221, 40));
         pushButtonAddOrders->setFont(font3);
         pushButtonAddOrders->setCursor(QCursor(Qt::PointingHandCursor));
         pushButtonAddOrders->setStyleSheet(QString::fromUtf8("*{\n"
@@ -132,7 +133,7 @@ public:
         pushButtonAddOrders->setFlat(true);
         pushButtonDeleteStocks = new QPushButton(Widget);
         pushButtonDeleteStocks->setObjectName(QString::fromUtf8("pushButtonDeleteStocks"));
-        pushButtonDeleteStocks->setGeometry(QRect(840, 210, 131, 40));
+        pushButtonDeleteStocks->setGeometry(QRect(840, 180, 131, 40));
         pushButtonDeleteStocks->setFont(font3);
         pushButtonDeleteStocks->setCursor(QCursor(Qt::PointingHandCursor));
         pushButtonDeleteStocks->setStyleSheet(QString::fromUtf8("*{\n"
@@ -147,7 +148,7 @@ public:
 ""));
         pushButtonDeleteOrders = new QPushButton(Widget);
         pushButtonDeleteOrders->setObjectName(QString::fromUtf8("pushButtonDeleteOrders"));
-        pushButtonDeleteOrders->setGeometry(QRect(840, 270, 131, 40));
+        pushButtonDeleteOrders->setGeometry(QRect(840, 240, 131, 40));
         pushButtonDeleteOrders->setFont(font3);
         pushButtonDeleteOrders->setCursor(QCursor(Qt::PointingHandCursor));
         pushButtonDeleteOrders->setStyleSheet(QString::fromUtf8("*{\n"
@@ -177,12 +178,28 @@ public:
 ""));
         pushButtonSolve->setCheckable(false);
         pushButtonSolve->setFlat(true);
-        answer = new QGraphicsView(Widget);
-        answer->setObjectName(QString::fromUtf8("answer"));
-        answer->setGeometry(QRect(610, 340, 361, 241));
         inputTable = new QTableWidget(Widget);
         inputTable->setObjectName(QString::fromUtf8("inputTable"));
         inputTable->setGeometry(QRect(20, 120, 531, 411));
+        answerTable = new QTableWidget(Widget);
+        answerTable->setObjectName(QString::fromUtf8("answerTable"));
+        answerTable->setGeometry(QRect(600, 350, 371, 191));
+        functionValue = new QLabel(Widget);
+        functionValue->setObjectName(QString::fromUtf8("functionValue"));
+        functionValue->setGeometry(QRect(610, 560, 361, 31));
+        QFont font4;
+        font4.setFamily(QString::fromUtf8("Segoe UI"));
+        font4.setPointSize(12);
+        functionValue->setFont(font4);
+        label_3 = new QLabel(Widget);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+        label_3->setGeometry(QRect(760, 320, 47, 13));
+        QFont font5;
+        font5.setFamily(QString::fromUtf8("Segoe UI"));
+        font5.setPointSize(12);
+        font5.setBold(true);
+        font5.setWeight(75);
+        label_3->setFont(font5);
 
         retranslateUi(Widget);
 
@@ -205,6 +222,8 @@ public:
         pushButtonDeleteStocks->setText(QApplication::translate("Widget", "\320\243\320\261\321\200\320\260\321\202\321\214 -1", nullptr));
         pushButtonDeleteOrders->setText(QApplication::translate("Widget", "\320\243\320\261\321\200\320\260\321\202\321\214 -1", nullptr));
         pushButtonSolve->setText(QApplication::translate("Widget", "\320\240\320\265\321\210\320\270\321\202\321\214", nullptr));
+        functionValue->setText(QString());
+        label_3->setText(QApplication::translate("Widget", "\320\236\321\202\320\262\320\265\321\202", nullptr));
     } // retranslateUi
 
 };
