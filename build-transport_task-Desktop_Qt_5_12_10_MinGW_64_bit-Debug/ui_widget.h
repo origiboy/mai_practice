@@ -14,6 +14,7 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QRadioButton>
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QWidget>
 #include <clickable_label.h>
@@ -35,6 +36,8 @@ public:
     QTableWidget *answerTable;
     QLabel *functionValue;
     QLabel *label_3;
+    QRadioButton *methodFirst;
+    QRadioButton *radioButton_2;
 
     void setupUi(QWidget *Widget)
     {
@@ -44,6 +47,7 @@ public:
         QFont font;
         font.setStrikeOut(false);
         Widget->setFont(font);
+        Widget->setCursor(QCursor(Qt::PointingHandCursor));
         Widget->setStyleSheet(QString::fromUtf8("background: rgb(255, 255, 255);\n"
 ""));
         label = new clickable_label(Widget);
@@ -189,14 +193,8 @@ public:
 "}"));
         pushButtonSolve = new QPushButton(Widget);
         pushButtonSolve->setObjectName(QString::fromUtf8("pushButtonSolve"));
-        pushButtonSolve->setGeometry(QRect(330, 550, 221, 40));
-        QFont font5;
-        font5.setFamily(QString::fromUtf8("Segoe UI"));
-        font5.setPointSize(12);
-        font5.setBold(false);
-        font5.setWeight(50);
-        font5.setStrikeOut(false);
-        pushButtonSolve->setFont(font5);
+        pushButtonSolve->setGeometry(QRect(330, 540, 221, 40));
+        pushButtonSolve->setFont(font3);
         pushButtonSolve->setCursor(QCursor(Qt::PointingHandCursor));
         pushButtonSolve->setStyleSheet(QString::fromUtf8("*{\n"
 "    border-radius: 20px;\n"
@@ -205,25 +203,45 @@ public:
 "\n"
 "\n"
 "*:hover{\n"
-"  background: #dbefff;\n"
+"  	background: #dbefff;\n"
 "}\n"
-""));
+"\n"
+"*:pressed{\n"
+"  	background: black;\n"
+"	color: white;\n"
+"}"));
         pushButtonSolve->setCheckable(false);
         pushButtonSolve->setFlat(true);
         inputTable = new QTableWidget(Widget);
         inputTable->setObjectName(QString::fromUtf8("inputTable"));
-        inputTable->setGeometry(QRect(20, 120, 531, 411));
+        inputTable->setGeometry(QRect(20, 110, 531, 411));
         answerTable = new QTableWidget(Widget);
         answerTable->setObjectName(QString::fromUtf8("answerTable"));
-        answerTable->setGeometry(QRect(600, 350, 371, 191));
+        answerTable->setGeometry(QRect(600, 330, 371, 191));
         functionValue = new QLabel(Widget);
         functionValue->setObjectName(QString::fromUtf8("functionValue"));
         functionValue->setGeometry(QRect(610, 560, 361, 31));
         functionValue->setFont(font2);
         label_3 = new QLabel(Widget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(760, 320, 47, 13));
+        label_3->setGeometry(QRect(760, 300, 47, 13));
         label_3->setFont(font3);
+        methodFirst = new QRadioButton(Widget);
+        methodFirst->setObjectName(QString::fromUtf8("methodFirst"));
+        methodFirst->setGeometry(QRect(20, 540, 261, 17));
+        QFont font5;
+        font5.setFamily(QString::fromUtf8("Segoe UI"));
+        font5.setPointSize(10);
+        font5.setBold(true);
+        font5.setWeight(75);
+        methodFirst->setFont(font5);
+        methodFirst->setChecked(true);
+        radioButton_2 = new QRadioButton(Widget);
+        radioButton_2->setObjectName(QString::fromUtf8("radioButton_2"));
+        radioButton_2->setGeometry(QRect(20, 570, 251, 17));
+        radioButton_2->setFont(font5);
+        radioButton_2->setCursor(QCursor(Qt::PointingHandCursor));
+        radioButton_2->setChecked(false);
 
         retranslateUi(Widget);
 
@@ -248,6 +266,8 @@ public:
         pushButtonSolve->setText(QApplication::translate("Widget", "\320\240\320\265\321\210\320\270\321\202\321\214", nullptr));
         functionValue->setText(QString());
         label_3->setText(QApplication::translate("Widget", "\320\236\321\202\320\262\320\265\321\202", nullptr));
+        methodFirst->setText(QApplication::translate("Widget", "\320\234\320\265\321\202\320\276\320\264 \321\201\320\265\320\262\320\265\321\200\320\275\320\276-\320\267\320\260\320\277\320\260\320\264\320\275\320\276\320\263\320\276 \321\203\320\263\320\273\320\260", nullptr));
+        radioButton_2->setText(QApplication::translate("Widget", "\320\234\320\265\321\202\320\276\320\264 \320\275\320\260\320\270\320\274\320\265\320\275\321\214\321\210\320\265\320\271 \321\201\321\202\320\276\320\270\320\274\320\276\321\201\321\202\320\270", nullptr));
     } // retranslateUi
 
 };
