@@ -9,6 +9,8 @@
 #include <QGridLayout>
 #include <QSpinBox>
 #include "info_window.h"
+#include <vector>
+#include <algorithm>
 
 #include <iostream>
 

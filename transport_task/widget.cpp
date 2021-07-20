@@ -52,6 +52,85 @@ void northwest_corner(int **&plan, int *&stocks, int *&orders, int &providers, i
     delete [] copy_orders;
 }
 
+vector <int> min_elem(int **&prices, int &providers, int &consumers, vector <int> &block_i, vector <int> &block_j)
+{
+    vector <int> indexes(2);
+    int low = 9999;
+    bool unlocked_i = true, unlocked_j = true;
+    for (int i = 0; i < providers; i++)
+    {
+        for (int j = 0; j < consumers; j++)
+        {
+            if (find(block_i.begin(), block_i.end(), i) != block_i.end())
+            {
+                unlocked_i = false;
+            }
+
+            if (find(block_j.begin(), block_j.end(), j) != block_j.end())
+            {
+                unlocked_j = false;
+            }
+
+            if (low > prices[i][j] && unlocked_i && unlocked_j)
+            {
+                low = prices[i][j];
+                indexes[0] = i;
+                indexes[1] = j;
+            }
+            unlocked_i = true;
+            unlocked_j = true;
+        }
+    }
+    return indexes;
+}
+
+void least_cost(int **&plan, int **&prices, int *&stocks, int *&orders, int &providers, int &consumers)
+{
+    vector <int> block_i, block_j;
+    vector <int> indexes(2);
+    int *copy_orders = new  int [consumers];
+    int *copy_stocks = new  int [providers];
+    int a = 0, b = 0, p = 0, i_min = 0, j_min = 0;
+    copy(orders, orders + consumers, copy_orders);
+    copy(stocks, stocks + providers, copy_stocks);
+    for (int i = 0; i < providers; i++)
+    {
+        a += stocks[i];
+    }
+    for (int i = 0; i < consumers; i++)
+    {
+        b += orders[i];
+    }
+    while (true)
+    {
+        if (a == 0 && b == 0)
+        {
+            break;
+        }
+        indexes = min_elem(prices, providers, consumers, block_i, block_j);
+        i_min = indexes[0];
+        j_min = indexes[1];
+        if (copy_stocks[i_min] <= copy_orders[j_min])
+        {
+            plan[i_min][j_min] = copy_stocks[i_min];
+            a -= copy_stocks[i_min];
+            b -= copy_stocks[i_min];
+            copy_orders[j_min] -= copy_stocks[i_min];
+            block_i.push_back(i_min);
+        }
+        else if (copy_stocks[i_min] >= copy_orders[j_min])
+        {
+            plan[i_min][j_min] = copy_orders[j_min];
+            a -= copy_orders[j_min];
+            b -= copy_orders[j_min];
+            copy_stocks[i_min] -= copy_orders[j_min];
+            block_j.push_back(j_min);
+        }
+    }
+    delete [] copy_orders;
+    delete [] copy_stocks;
+}
+
 int z(int **&plan, int **&prices, int &providers, int &consumers)
 {
     int z = 0;
@@ -193,6 +272,8 @@ void Widget::on_pushButtonSolve_clicked() {
     int i = 0; //строка
     int j = 0; //столбец
 
+    bool method = ui->methodFirst->isChecked();
+
     int taskData[row+1][column+1];
 
 
@@ -288,7 +369,12 @@ void Widget::on_pushButtonSolve_clicked() {
           }
       }
 
-      northwest_corner(plan, stocks, orders, providers, consumers);
+        if (method) {
+            northwest_corner(plan, stocks, orders, providers, consumers);
+        } else {
+            least_cost(plan, prices, stocks, orders, providers, consumers);
+        }
+
 
       ui->functionValue->setText(QString("Значение целевой функции = ") + QString::number(z(plan, prices, providers, consumers)));
 
