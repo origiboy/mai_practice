@@ -93,6 +93,8 @@ void Widget::table_change()
     ui->inputTable->verticalHeader()->hide();
     ui->inputTable->horizontalHeader()->hide();
 
+    ui->inputTable->setRowCount(0);
+    ui->inputTable->setColumnCount(0);
 
     ui->inputTable->setRowCount(3 + row);
     ui->inputTable->setColumnCount(2 + column);
@@ -102,45 +104,65 @@ void Widget::table_change()
     int j = 0; //столбец
 
 
-
-  QLabel *title = new QLabel("", this);
-
   for (i = 0; i < 3 + row; i++) {
       for (j = 0; j < 2 + column; j++) {
           if (i < 2 || j < 1) {
               if (i == 0 && j == 0 ) {
-                  title = new QLabel("Поставщик", this);
-                  ui->inputTable->setCellWidget(i, j, title);
+                  QTableWidgetItem *item = new QTableWidgetItem("Поставщик");
+                  item->setTextAlignment(Qt::AlignCenter);
+                  item->setBackgroundColor("#c1caca");
+                  ui->inputTable->setItem(i, j, item);
+                  ui->inputTable->setSpan(i, j, 2, 1);
               }
               if (i == 0 && j == 1 ) {
-                  title = new QLabel("Потребитель", this);
-                  ui->inputTable->setCellWidget(i, j, title);
+                  QTableWidgetItem *item = new QTableWidgetItem("Потребитель");
+                  item->setTextAlignment(Qt::AlignCenter);
+                  item->setBackgroundColor("#c1caca");
+                  ui->inputTable->setItem(i, j, item);
+                  ui->inputTable->setSpan(i, j, 1, column);
               }
-              if (i == 0 && j == column + 1 ) {
-                  title = new QLabel("Запас", this);
-                  ui->inputTable->setCellWidget(i, j, title);
-              }
+
               if (i == 1 && j >= 1 && j <= column) {
-                  title = new QLabel("B"+QString::number(j), this);
-                  ui->inputTable->setCellWidget(i, j, title);
+                  QTableWidgetItem *item = new QTableWidgetItem("B"+QString::number(j));
+                  item->setTextAlignment(Qt::AlignCenter);
+                  item->setBackgroundColor("#c1caca");
+                  ui->inputTable->setItem(i, j, item);
               }
 
               if (j == 0 && i >= 2 && i <= row + 1) {
-                  title = new QLabel("A"+QString::number(i-1), this);
-                  ui->inputTable->setCellWidget(i, j, title);
+                  QTableWidgetItem *item = new QTableWidgetItem("A"+QString::number(i-1));
+                  item->setTextAlignment(Qt::AlignCenter);
+                  item->setBackgroundColor("#c1caca");
+                  ui->inputTable->setItem(i, j, item);
+              }
+              if (i == 0 && j == column + 1 ) {
+                  QTableWidgetItem *item = new QTableWidgetItem("Запас");
+                  item->setTextAlignment(Qt::AlignCenter);
+                  ui->inputTable->setItem(i, j, item);
+                  item->setBackgroundColor("#c1caca");
+                  ui->inputTable->setSpan(i, j, 2, 1);
               }
               if (i == row + 2 && j == 0 ) {
-                  title = new QLabel("Потребность", this);
-                  ui->inputTable->setCellWidget(i, j, title);
+                  QTableWidgetItem *item = new QTableWidgetItem("Потребность");
+                  item->setTextAlignment(Qt::AlignCenter);
+                  item->setBackgroundColor("#c1caca");
+                  ui->inputTable->setItem(i, j, item);
               }
 
           }
           else {
-            if (i >= 2 && j >= 1) {
+            if (i >= 2 && j >= 1 && !(i == row + 2 && j == column + 1)) {
                 data[i-2][j-1] = new QSpinBox();
+                data[i-2][j-1]->setAlignment(Qt::AlignCenter);
                 ui->inputTable->setCellWidget(i, j, data[i-2][j-1]);
                 data[i-2][j-1]->setButtonSymbols(QSpinBox::NoButtons);
             }
+
+                    QTableWidgetItem *item = new QTableWidgetItem();
+                    item->setTextAlignment(Qt::AlignCenter);
+                    item->setBackgroundColor("#998200");
+                    ui->inputTable->setItem(i, j, item);
+
 
           }
       }
@@ -174,7 +196,13 @@ void Widget::on_pushButtonSolve_clicked() {
 
     for (i = 0; i < row+1; i++) {
         for (j = 0; j < column+1; j++) {
-            taskData[i][j] = data[i][j]->value();
+
+            if (!(i == row && j == column)) {
+                taskData[i][j] = data[i][j]->value();
+            } else {
+                taskData[i][j] = 0;
+            }
+
         }
     }
 
@@ -281,10 +309,11 @@ void Widget::on_pushButtonSolve_clicked() {
       for (int i = 0; i < providers; i++)
       {
           delete [] plan[i];
+          delete [] prices[i];
       }
 
 
-    //  delete [] prices;
+      delete [] prices;
       delete [] stocks;
       delete [] orders;
       delete [] plan;
