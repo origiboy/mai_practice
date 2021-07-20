@@ -232,6 +232,7 @@ void Widget::table_change()
           else {
             if (i >= 2 && j >= 1 && !(i == row + 2 && j == column + 1)) {
                 data[i-2][j-1] = new QSpinBox();
+                data[i-2][j-1]->setRange(0, 10000);
                 data[i-2][j-1]->setAlignment(Qt::AlignCenter);
                 ui->inputTable->setCellWidget(i, j, data[i-2][j-1]);
                 data[i-2][j-1]->setButtonSymbols(QSpinBox::NoButtons);
