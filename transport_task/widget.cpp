@@ -85,17 +85,17 @@ Widget::Widget(QWidget *parent)
         ui->pushButtonDeleteOrders->setDisabled(true);
 
 
-        emit table_change_signal();
+        table_change_signal();
 }
 
 void Widget::table_change()
 {
+    ui->inputTable->verticalHeader()->hide();
+    ui->inputTable->horizontalHeader()->hide();
+
+
     ui->inputTable->setRowCount(3 + row);
     ui->inputTable->setColumnCount(2 + column);
-
-    ui->inputTable->verticalHeader()->hide();
-
-    ui->inputTable->horizontalHeader()->hide();
 
 
     int i = 0; //строка
@@ -111,7 +111,6 @@ void Widget::table_change()
               if (i == 0 && j == 0 ) {
                   title = new QLabel("Поставщик", this);
                   ui->inputTable->setCellWidget(i, j, title);
-                  ui->inputTable->setSpan(0,0,2,1);
               }
               if (i == 0 && j == 1 ) {
                   title = new QLabel("Потребитель", this);
@@ -120,7 +119,6 @@ void Widget::table_change()
               if (i == 0 && j == column + 1 ) {
                   title = new QLabel("Запас", this);
                   ui->inputTable->setCellWidget(i, j, title);
-                  ui->inputTable->setSpan(i,column + 1,2,1);
               }
               if (i == 1 && j >= 1 && j <= column) {
                   title = new QLabel("B"+QString::number(j), this);
@@ -147,6 +145,11 @@ void Widget::table_change()
           }
       }
   }
+
+
+  ui->inputTable->horizontalHeader()->resizeSections(QHeaderView::Stretch);
+  ui->inputTable->verticalHeader()->resizeSections(QHeaderView::Stretch);
+  ui->inputTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
 }
 
