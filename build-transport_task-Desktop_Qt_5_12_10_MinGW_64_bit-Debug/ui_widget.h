@@ -80,8 +80,14 @@ public:
         label_2->setIndent(0);
         pushButtonClear = new QPushButton(Widget);
         pushButtonClear->setObjectName(QString::fromUtf8("pushButtonClear"));
-        pushButtonClear->setGeometry(QRect(600, 120, 151, 40));
-        pushButtonClear->setFont(font2);
+        pushButtonClear->setGeometry(QRect(600, 240, 371, 40));
+        QFont font3;
+        font3.setFamily(QString::fromUtf8("Segoe UI"));
+        font3.setPointSize(12);
+        font3.setBold(true);
+        font3.setWeight(75);
+        font3.setStrikeOut(false);
+        pushButtonClear->setFont(font3);
         pushButtonClear->setCursor(QCursor(Qt::PointingHandCursor));
         pushButtonClear->setStyleSheet(QString::fromUtf8("*{\n"
 "    border-radius: 20px;\n"
@@ -90,19 +96,23 @@ public:
 "\n"
 "\n"
 "*:hover{\n"
-"  background: #dbefff;\n"
+"  	background: #dbefff;\n"
 "}\n"
-""));
+"\n"
+"*:pressed{\n"
+"  	background: black;\n"
+"	color: white;\n"
+"}"));
         pushButtonAddStocks = new QPushButton(Widget);
         pushButtonAddStocks->setObjectName(QString::fromUtf8("pushButtonAddStocks"));
-        pushButtonAddStocks->setGeometry(QRect(600, 180, 221, 40));
-        QFont font3;
-        font3.setFamily(QString::fromUtf8("Segoe UI"));
-        font3.setPointSize(12);
-        font3.setBold(false);
-        font3.setWeight(50);
-        font3.setStrikeOut(false);
-        pushButtonAddStocks->setFont(font3);
+        pushButtonAddStocks->setGeometry(QRect(600, 120, 231, 40));
+        QFont font4;
+        font4.setFamily(QString::fromUtf8("Segoe UI"));
+        font4.setPointSize(10);
+        font4.setBold(true);
+        font4.setWeight(75);
+        font4.setStrikeOut(false);
+        pushButtonAddStocks->setFont(font4);
         pushButtonAddStocks->setCursor(QCursor(Qt::PointingHandCursor));
         pushButtonAddStocks->setStyleSheet(QString::fromUtf8("*{\n"
 "    border-radius: 20px;\n"
@@ -111,13 +121,17 @@ public:
 "\n"
 "\n"
 "*:hover{\n"
-"  background: #dbefff;\n"
+"  	background: #dbefff;\n"
 "}\n"
-""));
+"\n"
+"*:pressed{\n"
+"  	background: black;\n"
+"	color: white;\n"
+"}"));
         pushButtonAddOrders = new QPushButton(Widget);
         pushButtonAddOrders->setObjectName(QString::fromUtf8("pushButtonAddOrders"));
-        pushButtonAddOrders->setGeometry(QRect(600, 240, 221, 40));
-        pushButtonAddOrders->setFont(font3);
+        pushButtonAddOrders->setGeometry(QRect(600, 180, 231, 40));
+        pushButtonAddOrders->setFont(font4);
         pushButtonAddOrders->setCursor(QCursor(Qt::PointingHandCursor));
         pushButtonAddOrders->setStyleSheet(QString::fromUtf8("*{\n"
 "    border-radius: 20px;\n"
@@ -126,15 +140,19 @@ public:
 "\n"
 "\n"
 "*:hover{\n"
-"  background: #dbefff;\n"
+"  	background: #dbefff;\n"
 "}\n"
-""));
+"\n"
+"*:pressed{\n"
+"  	background: black;\n"
+"	color: white;\n"
+"}"));
         pushButtonAddOrders->setCheckable(false);
         pushButtonAddOrders->setFlat(true);
         pushButtonDeleteStocks = new QPushButton(Widget);
         pushButtonDeleteStocks->setObjectName(QString::fromUtf8("pushButtonDeleteStocks"));
-        pushButtonDeleteStocks->setGeometry(QRect(840, 180, 131, 40));
-        pushButtonDeleteStocks->setFont(font3);
+        pushButtonDeleteStocks->setGeometry(QRect(840, 120, 131, 40));
+        pushButtonDeleteStocks->setFont(font4);
         pushButtonDeleteStocks->setCursor(QCursor(Qt::PointingHandCursor));
         pushButtonDeleteStocks->setStyleSheet(QString::fromUtf8("*{\n"
 "    border-radius: 20px;\n"
@@ -143,13 +161,17 @@ public:
 "\n"
 "\n"
 "*:hover{\n"
-"  background: #dbefff;\n"
+"  	background: #dbefff;\n"
 "}\n"
-""));
+"\n"
+"*:pressed{\n"
+"  	background: black;\n"
+"	color: white;\n"
+"}"));
         pushButtonDeleteOrders = new QPushButton(Widget);
         pushButtonDeleteOrders->setObjectName(QString::fromUtf8("pushButtonDeleteOrders"));
-        pushButtonDeleteOrders->setGeometry(QRect(840, 240, 131, 40));
-        pushButtonDeleteOrders->setFont(font3);
+        pushButtonDeleteOrders->setGeometry(QRect(840, 180, 131, 40));
+        pushButtonDeleteOrders->setFont(font4);
         pushButtonDeleteOrders->setCursor(QCursor(Qt::PointingHandCursor));
         pushButtonDeleteOrders->setStyleSheet(QString::fromUtf8("*{\n"
 "    border-radius: 20px;\n"
@@ -158,13 +180,23 @@ public:
 "\n"
 "\n"
 "*:hover{\n"
-"  background: #dbefff;\n"
+"  	background: #dbefff;\n"
 "}\n"
-""));
+"\n"
+"*:pressed{\n"
+"  	background: black;\n"
+"	color: white;\n"
+"}"));
         pushButtonSolve = new QPushButton(Widget);
         pushButtonSolve->setObjectName(QString::fromUtf8("pushButtonSolve"));
         pushButtonSolve->setGeometry(QRect(330, 550, 221, 40));
-        pushButtonSolve->setFont(font3);
+        QFont font5;
+        font5.setFamily(QString::fromUtf8("Segoe UI"));
+        font5.setPointSize(12);
+        font5.setBold(false);
+        font5.setWeight(50);
+        font5.setStrikeOut(false);
+        pushButtonSolve->setFont(font5);
         pushButtonSolve->setCursor(QCursor(Qt::PointingHandCursor));
         pushButtonSolve->setStyleSheet(QString::fromUtf8("*{\n"
 "    border-radius: 20px;\n"
@@ -187,19 +219,11 @@ public:
         functionValue = new QLabel(Widget);
         functionValue->setObjectName(QString::fromUtf8("functionValue"));
         functionValue->setGeometry(QRect(610, 560, 361, 31));
-        QFont font4;
-        font4.setFamily(QString::fromUtf8("Segoe UI"));
-        font4.setPointSize(12);
-        functionValue->setFont(font4);
+        functionValue->setFont(font2);
         label_3 = new QLabel(Widget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
         label_3->setGeometry(QRect(760, 320, 47, 13));
-        QFont font5;
-        font5.setFamily(QString::fromUtf8("Segoe UI"));
-        font5.setPointSize(12);
-        font5.setBold(true);
-        font5.setWeight(75);
-        label_3->setFont(font5);
+        label_3->setFont(font3);
 
         retranslateUi(Widget);
 

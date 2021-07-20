@@ -95,8 +95,8 @@ background-repeat: no-repeat;
    <property name="geometry">
     <rect>
      <x>600</x>
-     <y>120</y>
-     <width>151</width>
+     <y>240</y>
+     <width>371</width>
      <height>40</height>
     </rect>
    </property>
@@ -104,6 +104,8 @@ background-repeat: no-repeat;
     <font>
      <family>Segoe UI</family>
      <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
      <strikeout>false</strikeout>
     </font>
    </property>
@@ -118,9 +120,13 @@ background-repeat: no-repeat;
 
 
 *:hover{
-  background: #dbefff;
+  	background: #dbefff;
 }
-</string>
+
+*:pressed{
+  	background: black;
+	color: white;
+}</string>
    </property>
    <property name="text">
     <string>Очистить таблицу</string>
@@ -130,17 +136,17 @@ background-repeat: no-repeat;
    <property name="geometry">
     <rect>
      <x>600</x>
-     <y>180</y>
-     <width>221</width>
+     <y>120</y>
+     <width>231</width>
      <height>40</height>
     </rect>
    </property>
    <property name="font">
     <font>
      <family>Segoe UI</family>
-     <pointsize>12</pointsize>
-     <weight>50</weight>
-     <bold>false</bold>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
      <strikeout>false</strikeout>
     </font>
    </property>
@@ -155,9 +161,13 @@ background-repeat: no-repeat;
 
 
 *:hover{
-  background: #dbefff;
+  	background: #dbefff;
 }
-</string>
+
+*:pressed{
+  	background: black;
+	color: white;
+}</string>
    </property>
    <property name="text">
     <string>Добавить поставщика +1</string>
@@ -167,17 +177,17 @@ background-repeat: no-repeat;
    <property name="geometry">
     <rect>
      <x>600</x>
-     <y>240</y>
-     <width>221</width>
+     <y>180</y>
+     <width>231</width>
      <height>40</height>
     </rect>
    </property>
    <property name="font">
     <font>
      <family>Segoe UI</family>
-     <pointsize>12</pointsize>
-     <weight>50</weight>
-     <bold>false</bold>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
      <strikeout>false</strikeout>
     </font>
    </property>
@@ -192,9 +202,13 @@ background-repeat: no-repeat;
 
 
 *:hover{
-  background: #dbefff;
+  	background: #dbefff;
 }
-</string>
+
+*:pressed{
+  	background: black;
+	color: white;
+}</string>
    </property>
    <property name="text">
     <string>Добавить потребителя +1</string>
@@ -213,7 +227,7 @@ background-repeat: no-repeat;
    <property name="geometry">
     <rect>
      <x>840</x>
-     <y>180</y>
+     <y>120</y>
      <width>131</width>
      <height>40</height>
     </rect>
@@ -221,9 +235,9 @@ background-repeat: no-repeat;
    <property name="font">
     <font>
      <family>Segoe UI</family>
-     <pointsize>12</pointsize>
-     <weight>50</weight>
-     <bold>false</bold>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
      <strikeout>false</strikeout>
     </font>
    </property>
@@ -238,9 +252,13 @@ background-repeat: no-repeat;
 
 
 *:hover{
-  background: #dbefff;
+  	background: #dbefff;
 }
-</string>
+
+*:pressed{
+  	background: black;
+	color: white;
+}</string>
    </property>
    <property name="text">
     <string>Убрать -1</string>
@@ -250,7 +268,7 @@ background-repeat: no-repeat;
    <property name="geometry">
     <rect>
      <x>840</x>
-     <y>240</y>
+     <y>180</y>
      <width>131</width>
      <height>40</height>
     </rect>
@@ -258,9 +276,9 @@ background-repeat: no-repeat;
    <property name="font">
     <font>
      <family>Segoe UI</family>
-     <pointsize>12</pointsize>
-     <weight>50</weight>
-     <bold>false</bold>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
      <strikeout>false</strikeout>
     </font>
    </property>
@@ -275,9 +293,13 @@ background-repeat: no-repeat;
 
 
 *:hover{
-  background: #dbefff;
+  	background: #dbefff;
 }
-</string>
+
+*:pressed{
+  	background: black;
+	color: white;
+}</string>
    </property>
    <property name="text">
     <string>Убрать -1</string>
@@ -362,6 +384,7 @@ background-repeat: no-repeat;
     <font>
      <family>Segoe UI</family>
      <pointsize>12</pointsize>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="text">
@@ -383,6 +406,7 @@ background-repeat: no-repeat;
      <pointsize>12</pointsize>
      <weight>75</weight>
      <bold>true</bold>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="text">

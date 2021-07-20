@@ -180,7 +180,9 @@ void Widget::on_pushButtonClear_clicked() {
     int j = 0; //столбец
     for (i = 0; i < row+1; i++) {
         for (j = 0; j < column+1; j++) {
-            data[i][j]->setValue(0);
+            if (!(i == row && j == column)) {
+                data[i][j]->setValue(0);
+            }
         }
     }
 }

@@ -30,3 +30,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     images.qrc
+
+
+# Created by Daniil Shibalkov and Mike Kosarev for MAI
