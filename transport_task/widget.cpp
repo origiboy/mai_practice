@@ -163,6 +163,17 @@ Widget::Widget(QWidget *parent)
         ui->pushButtonDeleteStocks->setDisabled(true);
         ui->pushButtonDeleteOrders->setDisabled(true);
 
+        int i = 0; //строка
+        int j = 0; //столбец
+
+        for (i = 0; i < ROWS_MAX; i++) {
+            for (j = 0; j < COLUMNS_MAX; j++) {
+
+                 cash[i][j] = 0;
+
+            }
+        }
+
 
         table_change_signal();
 }
@@ -172,6 +183,11 @@ void Widget::table_change()
     ui->inputTable->verticalHeader()->hide();
     ui->inputTable->horizontalHeader()->hide();
 
+    int i = 0; //строка
+    int j = 0; //столбец
+
+
+
     ui->inputTable->setRowCount(0);
     ui->inputTable->setColumnCount(0);
 
@@ -179,8 +195,7 @@ void Widget::table_change()
     ui->inputTable->setColumnCount(2 + column);
 
 
-    int i = 0; //строка
-    int j = 0; //столбец
+
 
 
   for (i = 0; i < 3 + row; i++) {
@@ -236,6 +251,7 @@ void Widget::table_change()
                 data[i-2][j-1]->setAlignment(Qt::AlignCenter);
                 ui->inputTable->setCellWidget(i, j, data[i-2][j-1]);
                 data[i-2][j-1]->setButtonSymbols(QSpinBox::NoButtons);
+                data[i-2][j-1]->setValue(cash[i-2][j-1]);
             }
 
                     QTableWidgetItem *item = new QTableWidgetItem();
@@ -409,6 +425,19 @@ void Widget::on_pushButtonSolve_clicked() {
 }
 
 void Widget::on_pushButtonAddStocks_clicked() {
+    int i = 0; //строка
+    int j = 0; //столбец
+    for (i = 0; i < row+1; i++) {
+        for (j = 0; j < column+1; j++) {
+
+            if (!(i == row && j == column)) {
+                cash[i][j] = data[i][j]->value();
+            } else {
+                cash[i][j] = 0;
+            }
+
+        }
+    }
     if (row < ROWS_MAX) {
         row++;
         ui->pushButtonDeleteStocks->setDisabled(false);
@@ -420,7 +449,33 @@ void Widget::on_pushButtonAddStocks_clicked() {
 }
 
 void Widget::on_pushButtonAddOrders_clicked() {
+    int i = 0; //строка
+    int j = 0; //столбец
+    for (i = 0; i < row+1; i++) {
+        for (j = 0; j < column+1; j++) {
+
+            if (!(i == row && j == column)) {
+                cash[i][j] = data[i][j]->value();
+            } else {
+                cash[i][j] = 0;
+            }
+
+        }
+    }
     if (column < COLUMNS_MAX) {
+        int i = 0; //строка
+        int j = 0; //столбец
+        for (i = 0; i < row+1; i++) {
+            for (j = 0; j < column+1; j++) {
+
+                if (!(i == row && j == column)) {
+                    cash[i][j] = data[i][j]->value();
+                } else {
+                    cash[i][j] = 0;
+                }
+
+            }
+        }
         column++;
         ui->pushButtonDeleteOrders->setDisabled(false);
         if (column == COLUMNS_MAX) {
@@ -431,6 +486,19 @@ void Widget::on_pushButtonAddOrders_clicked() {
 }
 
 void Widget::on_pushButtonDeleteStocks_clicked() {
+    int i = 0; //строка
+    int j = 0; //столбец
+    for (i = 0; i < row+1; i++) {
+        for (j = 0; j < column+1; j++) {
+
+            if (!(i == row && j == column)) {
+                cash[i][j] = data[i][j]->value();
+            } else {
+                cash[i][j] = 0;
+            }
+
+        }
+    }
     if (row > 3) {
         row--;
         ui->pushButtonAddStocks->setDisabled(false);
@@ -442,6 +510,19 @@ void Widget::on_pushButtonDeleteStocks_clicked() {
 }
 
 void Widget::on_pushButtonDeleteOrders_clicked() {
+    int i = 0; //строка
+    int j = 0; //столбец
+    for (i = 0; i < row+1; i++) {
+        for (j = 0; j < column+1; j++) {
+
+            if (!(i == row && j == column)) {
+                cash[i][j] = data[i][j]->value();
+            } else {
+                cash[i][j] = 0;
+            }
+
+        }
+    }
     if (column > 3) {
         ui->pushButtonAddOrders->setDisabled(false);
         column--;

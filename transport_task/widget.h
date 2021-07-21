@@ -30,9 +30,12 @@ public:
     Widget(QWidget *parent = nullptr);
     ~Widget();
     QSpinBox *data[ROWS_MAX+1][COLUMNS_MAX+1];
+    int  cash[ROWS_MAX+1][COLUMNS_MAX+1];
 
     int row = 3;
     int column = 3;
+
+    bool start = false;
 
 private:
     Ui::Widget *ui;
