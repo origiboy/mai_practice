@@ -34,12 +34,13 @@ public:
     int  cashOrders[COLUMNS_MAX];
     int  cashStocks[ROWS_MAX];
 
-    int row = 3;
-    int column = 3;
     int rowPrev = 0;
     int columnPrev = 0;
 
-    bool start = false;
+
+    int row = 3;
+    int column = 3;
+
 
 private:
     Ui::Widget *ui;
