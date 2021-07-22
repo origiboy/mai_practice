@@ -55,7 +55,7 @@ void northwest_corner(int **&plan, int *&stocks, int *&orders, int &providers, i
 vector <int> min_elem(int **&prices, int &providers, int &consumers, vector <int> &block_i, vector <int> &block_j)
 {
     vector <int> indexes(2);
-    int low = 9999;
+    int low = 999999;
     bool unlocked_i = true, unlocked_j = true;
     for (int i = 0; i < providers; i++)
     {
