@@ -90,7 +90,7 @@ void least_cost(int **&plan, int **&prices, int *&stocks, int *&orders, int &pro
     vector <int> indexes(2);
     int *copy_orders = new  int [consumers];
     int *copy_stocks = new  int [providers];
-    int a = 0, b = 0, p = 0, i_min = 0, j_min = 0;
+    int a = 0, b = 0, i_min = 0, j_min = 0;
     copy(orders, orders + consumers, copy_orders);
     copy(stocks, stocks + providers, copy_stocks);
     for (int i = 0; i < providers; i++)
@@ -152,9 +152,10 @@ Widget::Widget(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Widget)
 {
-
+        this->setFixedSize(1000,600);
 
         window = new info_window();
+        window->setWindowTitle("Справка");
 
         ui->setupUi(this);
         connect(ui->label, SIGNAL(Mouse_Pressed()), this, SLOT(Mouse_Pressed_info()));
@@ -162,10 +163,6 @@ Widget::Widget(QWidget *parent)
 
         ui->pushButtonDeleteStocks->setDisabled(true);
         ui->pushButtonDeleteOrders->setDisabled(true);
-
-
-
-
 
         table_change_signal();
 }
@@ -205,17 +202,11 @@ void Widget::table_change()
         }
     }
 
-
-
     ui->inputTable->setRowCount(0);
     ui->inputTable->setColumnCount(0);
 
     ui->inputTable->setRowCount(3 + row);
     ui->inputTable->setColumnCount(2 + column);
-
-
-
-
 
   for (i = 0; i < 3 + row; i++) {
       for (j = 0; j < 2 + column; j++) {
@@ -436,7 +427,7 @@ void Widget::on_pushButtonSolve_clicked() {
 
       ui->answerTable->horizontalHeader()->resizeSections(QHeaderView::Stretch);
       ui->answerTable->verticalHeader()->resizeSections(QHeaderView::Stretch);
-      ui->answerTable->setEditTriggers(QAbstractItemView::NoEditTriggers); //Чтобы нельзя было редачить
+      ui->answerTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
 
       for (int i = 0; i < providers; i++)
