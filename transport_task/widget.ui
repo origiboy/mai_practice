@@ -16,7 +16,7 @@
    </font>
   </property>
   <property name="cursor">
-   <cursorShape>PointingHandCursor</cursorShape>
+   <cursorShape>ArrowCursor</cursorShape>
   </property>
   <property name="windowTitle">
    <string>Widget</string>
@@ -435,6 +435,7 @@ background-repeat: no-repeat;
      <pointsize>10</pointsize>
      <weight>75</weight>
      <bold>true</bold>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="text">
@@ -459,6 +460,7 @@ background-repeat: no-repeat;
      <pointsize>10</pointsize>
      <weight>75</weight>
      <bold>true</bold>
+     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="cursor">

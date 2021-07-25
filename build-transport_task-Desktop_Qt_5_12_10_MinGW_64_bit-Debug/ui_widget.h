@@ -47,7 +47,7 @@ public:
         QFont font;
         font.setStrikeOut(false);
         Widget->setFont(font);
-        Widget->setCursor(QCursor(Qt::PointingHandCursor));
+        Widget->setCursor(QCursor(Qt::ArrowCursor));
         Widget->setStyleSheet(QString::fromUtf8("background: rgb(255, 255, 255);\n"
 ""));
         label = new clickable_label(Widget);
@@ -229,17 +229,12 @@ public:
         methodFirst = new QRadioButton(Widget);
         methodFirst->setObjectName(QString::fromUtf8("methodFirst"));
         methodFirst->setGeometry(QRect(20, 540, 261, 17));
-        QFont font5;
-        font5.setFamily(QString::fromUtf8("Segoe UI"));
-        font5.setPointSize(10);
-        font5.setBold(true);
-        font5.setWeight(75);
-        methodFirst->setFont(font5);
+        methodFirst->setFont(font4);
         methodFirst->setChecked(true);
         radioButton_2 = new QRadioButton(Widget);
         radioButton_2->setObjectName(QString::fromUtf8("radioButton_2"));
         radioButton_2->setGeometry(QRect(20, 570, 251, 17));
-        radioButton_2->setFont(font5);
+        radioButton_2->setFont(font4);
         radioButton_2->setCursor(QCursor(Qt::PointingHandCursor));
         radioButton_2->setChecked(false);
 
