@@ -153,9 +153,11 @@ Widget::Widget(QWidget *parent)
     , ui(new Ui::Widget)
 {
         this->setFixedSize(1000,600);
+        this->setWindowIcon(QIcon(":/img/icon.png"));
 
         window = new info_window();
         window->setWindowTitle("Справка");
+        window->setWindowIcon(QIcon(":/img/icon.png"));
 
         ui->setupUi(this);
         connect(ui->label, SIGNAL(Mouse_Pressed()), this, SLOT(Mouse_Pressed_info()));
